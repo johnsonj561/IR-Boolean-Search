@@ -18,10 +18,17 @@ const toUpperCase = text => text.toUpperCase();
  */
 const removeWhiteSpace = text => text.replace(/\s+/g, " ");
 
+/*
+ * Split text into array of words
+ */
+const splitOnSpace = text => text.split(/\s/);
+
+
 
 module.exports = {
   removePunctuation,
   removeWhiteSpace,
   toUpperCase,
-  toLowerCase
+  toLowerCase,
+  splitOnSpace
 };
