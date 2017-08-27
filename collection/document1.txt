@@ -1,0 +1,10 @@
+Education
+Stroustrup has a master's degree in mathematics and computer science (1975) from Aarhus University, Denmark, and a PhD. in computer science (1979) from the University of Cambridge, England. His thesis advisor at Cambridge was Professor David Wheeler.
+
+Career
+Stroustrup began developing C++ in 1979 (then called "C with Classes"), and, in his own words, "invented C++, wrote its early definitions, and produced its first implementation... chose and formulated the design criteria for C++, designed all its major facilities, and was responsible for the processing of extension proposals in the C++ standards committee." Stroustrup also wrote a textbook for the language, The C++ Programming Language.
+
+Stroustrup was the head of AT&T Bell Labs' Large-scale Programming Research department, from its creation until late 2002. Stroustrup was elected member of the National Academy of Engineering in 2004. He is a Fellow of the ACM (1994) and an IEEE Fellow. From 2002 to 2014, Stroustrup was the College of Engineering Chair in Computer Science Professor at Texas A&M University. As of January 2014, Stroustrup is a Managing Director in the technology division of Morgan Stanley in New York City and a Visiting Professor in Computer Science at Columbia University. ITMO University noble doctor since 2013.
+
+In 2015, he was made a Fellow of the Computer History Museum for his invention of the C++ programming language.
+
