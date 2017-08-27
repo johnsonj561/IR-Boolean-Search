@@ -24,11 +24,9 @@ const start = TimePrecision.getTimeMS();
 const readAndCleanStream = fse.createReadStream(filePath, 'utf-8').pipe(cleanTextStream);
 
 // bind listeners to stream
-readAndCleanStream.on('data', function (chunk) {
-  console.log('\n\nSTREAM CHUNK AFTER TRANSFORM: \n', chunk);
-}).on('end', function () {
-  const end = TimePrecision.getTimeMS();
-  console.log('\n\nreadStream.pipe(cleanTextStream) took: ' + TimePrecision.getTimeDifference(start, end, 'ms'));
-}).on('error', function (err) {
-  console.log('\n\nSTREAM ERROR AFTER TRANSFORM:\n ', err);
-});
+readAndCleanStream.on('data', chunk => console.log('\n\nSTREAM CHUNK AFTER TRANSFORM: \n', chunk))
+  .on('end', () => {
+    const end = TimePrecision.getTimeMS();
+    console.log('\n\nreadStream.pipe(cleanTextStream) took: ' + TimePrecision.getTimeDifference(start, end, 'ms'));
+  })
+  .on('error', err => console.log('\n\nSTREAM ERROR AFTER TRANSFORM:\n ', err));
