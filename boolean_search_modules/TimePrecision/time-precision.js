@@ -11,7 +11,7 @@ function getTimeMS() {
  * Appends units to time string if provided
  */
 function getTimeDifference(start, end, units = '') {
-  return (end - start) + units;
+  return (end - start).toFixed(5) + ' ' + units;
 }
 
 module.exports = {
