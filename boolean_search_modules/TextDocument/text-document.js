@@ -78,11 +78,17 @@ TextDocument.prototype.tokenizeAndCountDocument = function (options, callback) {
     .on('error', err => console.log('\n\nSTREAM ERROR AFTER TRANSFORM:\n ', err));
 }
 
-
+/*
+ * Return document word count
+ */
 TextDocument.prototype.getWordCount = function () {
   if (this.isTokenized) return wordCount;
   else console.log('\nDocument not yet tokenized, word count not yet calculated.');
 }
 
+
+TextDocument.prototype.getTerms = function () {
+  return this.terms;
+}
 
 module.exports = TextDocument;
