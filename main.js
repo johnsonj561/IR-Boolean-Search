@@ -1,6 +1,7 @@
 const TimePrecision = require('./boolean_search_modules/TimePrecision/time-precision');
 const TextDocument = require('./boolean_search_modules/TextDocument/text-document');
 const TextCollection = require('./boolean_search_modules/TextCollection/text-collection');
+const InvertedIndex = require('./boolean_search_modules/InvertedIndex/inverted-index');
 
 console.log('\n\nMAIN\n\n');
 
@@ -13,6 +14,9 @@ const textFilePaths = [
 
 // define a TextCollection object
 let textCollection = new TextCollection();
+
+// define an InvertedIndex objet
+let invertedIndex = new InvertedIndex();
 
 // define transformation options to perform on data
 const transformOptions = {
@@ -39,11 +43,7 @@ for (let i = 0, l = textFilePaths.length; i < l; i++) {
 
 function collectionDone() {
   console.log('\n\nTextCollection created with size: ', textCollection.documentListSize());
-  let retrievedDoc = textCollection.getDocument(1);
-  console.log('retrievedDoc has attributes: ');
-  console.log('wordCount: ', retrievedDoc.wordCount);
-  console.log('isTokenized: ', retrievedDoc.isTokenized);
+  const documentsToIndex = textCollection.getDocumentList();
+  const documentIDs = Object.keys(documentsToIndex);
+  documentIDs.forEach(id => invertedIndex.indexDocument(documentsToIndex[id]));
 }
-
-
-console.log('\nProof of async tokenization...');

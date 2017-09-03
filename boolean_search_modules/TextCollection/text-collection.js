@@ -39,6 +39,7 @@ TextCollection.prototype.getDocument = function (documentID) {
   else console.log('\nUnable to get document with ID: ' + documentID + ', documentID does not exist.');
 }
 
+
 /*
  * Return the TextCollection's document list
  */
