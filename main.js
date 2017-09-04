@@ -49,16 +49,25 @@ eventEmitter.on('indexing:complete', function () {
 });
 
 
-// create readline interface and prompt user with search menu
+// create readline cli and define listeners
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
+  prompt: '\nEnter a word to search for, or enter blank string to quit:\n'
 });
 
-function promptUser() {
-  rl.question('\nEnter a word to search for:\t', response => {
-    // TODO: Log the answer in a database
+rl.on('line', function (response) {
+  if (response === '') this.close();
+  else {
     console.log(invertedIndex.searchTerm(response));
-    rl.close();
-  });
+    rl.prompt();
+  }
+}).on('close', function () {
+  console.log('\n\nGoodbye\n\n');
+});
+
+
+// prompt user to enter a search word
+function promptUser() {
+  rl.prompt();
 }

@@ -55,7 +55,7 @@ InvertedIndex.prototype.print = function () {
 }
 
 InvertedIndex.prototype.searchTerm = function (term) {
-  return this.index[term];
+  return this.index[term] || 'No Match Found'
 }
 
 module.exports = InvertedIndex;
