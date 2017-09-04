@@ -7,7 +7,7 @@ function TextDocument(path) {
   if (!path) {
     console.log('\nUnable to create TextDocument, invalid path: ', path);
   } else {
-    console.log('\nNew TextDocument created with ID: ' + DOCUMENT_ID);
+    console.log('\nNew TextDocument created\nID: ' + DOCUMENT_ID + '\nPath: ' + path);
     this.id = DOCUMENT_ID++;
     this.path = path;
     this.terms = {};
@@ -21,7 +21,7 @@ function TextDocument(path) {
  * If term already exists, given term's frequency is updated
  */
 TextDocument.prototype.addTerms = function (termList) {
-  console.log('\nAdding new terms to TextDocument with ID: ', this.id);
+  console.log('\nAdding new terms to TextDocument\nDocument ID: ', this.id);
   let termsObject = this.terms;
   termList.forEach(function (term) {
     // if the term exists, increment frequency
@@ -47,9 +47,11 @@ TextDocument.prototype.containsTerm = function (term) {
 /*
  * Print Document Terms and their corresponding frequency
  */
-TextDocument.prototype.print = function () {
-  console.log('\nPrinting TextDocument with ID: ' + this.id);
-  Object.keys(this.terms).forEach(key => console.log('Term: ' + key + ', Frequency: ' + this.terms[key].frequency));
+TextDocument.prototype.printTokenizedDocument = function () {
+  if (this.isTokenized) {
+    console.log('\nPrinting Tokenized TextDocument with ID: ' + this.id);
+    Object.keys(this.terms).forEach(key => console.log('Term: ' + key + ', Frequency: ' + this.terms[key].frequency));
+  }
 };
 
 
@@ -87,6 +89,9 @@ TextDocument.prototype.getWordCount = function () {
 }
 
 
+/*
+ * Return TextDocument terms list
+ */
 TextDocument.prototype.getTerms = function () {
   return this.terms;
 }

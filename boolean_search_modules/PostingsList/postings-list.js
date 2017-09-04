@@ -32,8 +32,8 @@ PostingsList.prototype.indexOfPosting = function (documentID) {
 
 PostingsList.prototype.sort = function () {
   this.list.sort(function (a, b) {
-    if (a.frequency < b.frequency) return -1;
-    else if (a.frequency > b.frequency) return 1;
+    if (a.frequency < b.frequency) return 1;
+    else if (a.frequency > b.frequency) return -1;
     else return 0;
   });
 }

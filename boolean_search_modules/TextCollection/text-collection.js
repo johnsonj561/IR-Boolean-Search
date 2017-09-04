@@ -1,9 +1,13 @@
+var COLLECTION_ID = 1;
+
 /*
  * Text Collection Constructor
  * Initializes TextCollection object with an empty document list
  */
 const TextCollection = function () {
   this.documentList = {};
+  this.id = COLLECTION_ID++;
+  console.log('\nNew TextCollection created\nID: ' + this.id);
 }
 
 
@@ -13,7 +17,7 @@ const TextCollection = function () {
  */
 TextCollection.prototype.addDocument = function (documentObject) {
   if (!this.documentList[documentObject.id]) {
-    console.log('\nAdding document to collection with ID: ' + documentObject.id);
+    console.log('\nAdding document to collection\nCollection ID: ' + this.id + '\nDocument ID: ' + documentObject.id);
     this.documentList[documentObject.id] = documentObject;
   } else console.log('\nocumentObject.id ' + documentObject.id + ' already exists, no document added to collection.');
 }
@@ -25,7 +29,7 @@ TextCollection.prototype.addDocument = function (documentObject) {
  */
 TextCollection.prototype.removeDocument = function (documentID) {
   if (this.documentList[documentID]) {
-    console.log('\nRemoving document from collection with ID: ' + documebtObject.id);
+    console.log('\nRemoving document from collection\nCollection ID: ' + this.id + '\nDocument ID: ' + documentObject.id);
     delete this.documentList[documentID];
   } else console.log('\nDocument ID ' + documentID + ' not found, no document removed from collection.');
 }
