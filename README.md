@@ -1,9 +1,9 @@
-## Boolean Search Strategies
+## Boolean Search Application
+#### A simple boolean search application that indexes documents as an inverted index with term frequencies
 
-### Description
-Experimenting with boolean search strategies as outlined in graduate Information Retireval course
-Florida Atlantic University
-Fall 2017
-
-### Outline
-Text pre-processing, indexing, data structure performance (trees vs hash tables), etc. More coming soon.
+- documents are read from collection directory
+- minimal text pre-processing is applied to each document (lowercase, remove whitespace, remove punctuation)
+- documents are tokenized, constructing a term list for each document (term, frequency)
+- inverted index is created such that inverted index includes list of all terms found in collection
+	- each term points to a postings list, a list of documents that contain the term and the frequency of the term in given document
+- enters prompt loop, requesting search term from user and providing results until terminates
